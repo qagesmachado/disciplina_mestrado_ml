@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Relatório de Validação YOLOv5 - best.pt</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    h1, h2 { margin: 0 0 12px 0; }
+    table { border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid #ccc; padding: 8px 10px; text-align: left; }
+    th { background: #f3f3f3; }
+    code { background: #f6f6f6; padding: 2px 6px; }
+    .metric-card { margin-top: 14px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+    .metric-card p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>Validação YOLOv5 - best.pt</h1>
+  <p>Este relatório foi gerado pelo script <code>run_and_validate_best_pt_yolov5.py</code>.</p>
+
+  <h2>Resumo Executivo das Métricas</h2>
+  <table>
+    <tr>
+      <th>Classe Avaliada</th>
+      <th>Total de Imagens</th>
+      <th>Total de Instâncias (Porcos)</th>
+      <th>Precisão (Precision)</th>
+      <th>Revocação (Recall)</th>
+      <th>mAP@0.50</th>
+      <th>mAP@0.50:0.95</th>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>136</td>
+      <td>1874</td>
+      <td>0.650355</td>
+      <td>0.854322</td>
+      <td>0.786251</td>
+      <td>0.274117</td>
+    </tr>
+  </table>
+
+  <h2>Como interpretar estes valores</h2>
+  <div class="metric-card">
+    <p><strong>Precisão (Precision):</strong> entre as detecções que o modelo fez, quantas estavam corretas.
+    Valor alto indica menos falsos positivos.</p>
+    <p><strong>Revocação (Recall):</strong> entre todos os porcos reais anotados, quantos o modelo conseguiu detectar.
+    Valor alto indica menos falsos negativos.</p>
+    <p><strong>mAP@0.50:</strong> qualidade média das detecções com critério IoU >= 0.50.
+    É uma visão mais tolerante da qualidade de localização das caixas.</p>
+    <p><strong>mAP@0.50:0.95:</strong> média do AP em múltiplos limiares de IoU (0.50 até 0.95).
+    É um critério mais rigoroso e mostra quão bem as caixas estão ajustadas com precisão fina.</p>
+    <p><strong>Leitura prática para apresentação:</strong> se Recall está alto e Precision moderada,
+    o modelo encontra a maioria dos porcos, porém ainda com detecções excedentes.
+    Se mAP@0.50:0.95 está bem abaixo de mAP@0.50, há espaço para melhorar o ajuste fino das caixas.</p>
+  </div>
+
+  <h2>Glossário de abreviações</h2>
+  <div class="metric-card">
+    <p><strong>TP (True Positive):</strong> detecção correta (modelo detectou porco e era porco).</p>
+    <p><strong>FP (False Positive):</strong> falso positivo (modelo detectou porco onde não deveria).</p>
+    <p><strong>FN (False Negative):</strong> falso negativo (havia porco e o modelo não detectou).</p>
+    <p><strong>TN (True Negative):</strong> verdadeiro negativo (não havia porco e o modelo não detectou; pouco usado diretamente em detecção).</p>
+    <p><strong>IoU (Intersection over Union):</strong> medida de sobreposição entre caixa predita e caixa real.</p>
+    <p><strong>AP (Average Precision):</strong> área sob a curva Precisão x Recall para uma classe.</p>
+    <p><strong>mAP (mean Average Precision):</strong> média dos APs.</p>
+    <p><strong>mAP@0.50:</strong> mAP com limiar IoU de 0.50.</p>
+    <p><strong>mAP@0.50:0.95:</strong> média de AP em múltiplos limiares de IoU (0.50 a 0.95).</p>
+  </div>
+
+  <h2>Arquivos gerados</h2>
+  <ul>
+    <li>Resultados por imagem: <code>outputs\best_pt_yolov5_val\individual_image_results.csv</code></li>
+    <li>Resumo consolidado: <code>outputs\best_pt_yolov5_val\summary_results.csv</code></li>
+    <li>Inferência com log por imagem: <code>outputs\best_pt_yolov5_detect_log</code></li>
+  </ul>
+</body>
+</html>
