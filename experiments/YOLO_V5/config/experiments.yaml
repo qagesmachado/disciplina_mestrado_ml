@@ -1,0 +1,32 @@
+# YOLOv5 — E01 autoral + REF (pig fixo)
+
+defaults:
+  imgsz: 640
+  epochs: 100
+  batch: 16
+  patience: 20
+  seed: 42
+  conf_thres: 0.25
+  workers: 4
+  device: auto
+  batch_cpu: 8
+
+dataset:
+  name: pig_kaggle
+  description: "Particao fixa pig/train + pig/val (consolidada no repo)"
+
+experiments:
+  E01:
+    framework: yolov5
+    model_label: YOLOv5s_autoral
+    weights_init: yolov5s.pt
+    run_name: E01_yolov5s_pig
+    train: true
+    template_table: tabela_resultados_s1
+  REF:
+    framework: yolov5
+    model_label: best.pt_terceiros
+    weights_init: pig/best.pt
+    run_name: REF_best_pt_pig
+    train: false
+    template_table: tabela_resultados_s1

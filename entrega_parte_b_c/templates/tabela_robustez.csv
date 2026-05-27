@@ -1,0 +1,11 @@
+experimento,modelo,cenario_degradado,precision,recall,map50,map50_95,queda_relativa_map50,queda_relativa_recall
+E03,YOLO11s,limpo,,,,,0.0,0.0
+E03,YOLO11s,brilho_escuro,,,,,,
+E03,YOLO11s,brilho_claro,,,,,,
+E03,YOLO11s,blur,,,,,,
+E03,YOLO11s,ruido,,,,,,
+E04,YOLO11-R,limpo,,,,,0.0,0.0
+E04,YOLO11-R,brilho_escuro,,,,,,
+E04,YOLO11-R,brilho_claro,,,,,,
+E04,YOLO11-R,blur,,,,,,
+E04,YOLO11-R,ruido,,,,,,

@@ -1,0 +1,9 @@
+# Alias do dataset pig (mesmo conteúdo que experiments/data/yaml/pig_dataset.yaml)
+# path relativo à raiz do repositório
+path: pig
+train: train/images
+val: val/images
+
+nc: 1
+names:
+  0: pig

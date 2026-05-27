@@ -1,0 +1,6 @@
+path: 'C:\\repositories\\repositories-mestrado\\disciplina_ml\\disciplina_ml_privado\\pig'
+train: train/images
+val: val/images
+nc: 1
+names:
+  0: pig

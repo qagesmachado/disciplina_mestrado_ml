@@ -1,0 +1,24 @@
+# Ultralytics YOLOv8 — E02 (pig fixo)
+
+defaults:
+  imgsz: 640
+  epochs: 100
+  batch: 16
+  patience: 20
+  seed: 42
+  conf_thres: 0.25
+  device: auto
+  batch_cpu: 8
+
+dataset:
+  name: pig_kaggle
+  description: "Particao fixa pig/train + pig/val (consolidada no repo)"
+
+experiments:
+  E02:
+    framework: ultralytics
+    model_label: YOLOv8s_autoral
+    weights_init: yolov8s.pt
+    run_name: E02_yolov8s_pig
+    train: true
+    template_table: tabela_resultados_s1

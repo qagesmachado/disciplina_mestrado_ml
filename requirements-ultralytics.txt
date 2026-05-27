@@ -1,0 +1,19 @@
+# Ambiente: venv_yolo_ultralytics — Ultralytics (E02 YOLOv8, E03/E04 futuros).
+# Sem yolov5 — não misturar com venv_yolo_5.
+# Python recomendado: 3.10 ou 3.11
+#
+# Uso: pip install -r requirements-ultralytics.txt
+
+ultralytics>=8.3.0,<9.0.0
+
+# torch via pip no Windows costuma ser CPU-only (+cpu). Apos o setup, rode:
+#   .\experiments\YOLO_V8\setup_pytorch_gpu.ps1
+torch>=2.0.0
+torchvision>=0.15.0
+
+numpy>=1.23.0
+pillow>=10.0.0
+matplotlib>=3.8.0
+PyYAML>=6.0
+opencv-python-headless>=4.8.0
+pandas>=2.0.0

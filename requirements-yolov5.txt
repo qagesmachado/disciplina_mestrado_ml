@@ -1,0 +1,15 @@
+# Ambiente: venv_yolo_5 — YOLOv5 apenas (E01, REF). Não instalar ultralytics aqui.
+# Python recomendado: 3.10+
+#
+# Uso: pip install -r requirements-yolov5.txt
+# (requirements.txt na raiz aponta para este arquivo)
+
+yolov5==7.0.14
+
+torch>=2.0.0
+torchvision>=0.15.0
+
+numpy==2.4.4
+pillow==12.1.1
+matplotlib==3.10.8
+PyYAML==6.0.3

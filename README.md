@@ -1,8 +1,13 @@
-# disciplina_ml_privado -- ambiente `venv_yolo_5`
+# disciplina_ml_privado
 
-Scripts deste repositório usam o pacote **YOLOv5** (PyPI: `yolov5`), PyTorch e bibliotecas de imagem. O arquivo de dependências é o `**requirements.txt`** (convenção do `pip`).
+Dois ambientes virtuais **isolados** (não misturar dependências):
 
-Crie e use um ambiente virtual com o nome sugerido `**venv_yolo_5**`.
+| Venv | Uso | Requirements |
+| --- | --- | --- |
+| `venv_yolo_5` | YOLOv5 — E01, REF | `requirements-yolov5.txt` ou `requirements.txt` |
+| `venv_yolo_ultralytics` | YOLOv8+ — E02 | `requirements-ultralytics.txt` |
+
+Crie cada venv separadamente. **Não** instale `ultralytics` no `venv_yolo_5`.
 
 ## Pré-requisitos
 
@@ -63,9 +68,19 @@ O `yolov5` instala muitas dependências transitivas (por exemplo `opencv-python`
 python -c "import yolov5, torch; print('OK', torch.__version__)"
 ```
 
-## 5. Scripts (com o venv ativo)
+## 5. Ambiente Ultralytics (E02 YOLOv8)
 
-- `python run_and_validate_best_pt_yolov5.py` -- detect/val com `yolov5` e `pig/best.pt`
+```powershell
+.\experiments\YOLO_V8\setup_venv_ultralytics.ps1
+.\experiments\YOLO_V8\run_yolov8_pig.ps1
+```
+
+## 6. Scripts (com o venv ativo)
+
+- **Experimentos TCD:** [experiments/README.md](experiments/README.md) — pig fixo, E01 + E02 + REF
+- `.\experiments\YOLO_V5\run_pig_baseline.ps1` — YOLOv5: E01 + REF
+- `.\experiments\YOLO_V8\run_yolov8_pig.ps1` — YOLOv8: E02
+- `python experiments/YOLO_V5/scripts/validar.py REF`
 - `python analisar_leitoes_por_imagem.py` -- estatísticas e gráficos
 - `python draw_yolo_boxes_v3.py --help` -- desenhar caixas nas imagens
 
@@ -73,7 +88,7 @@ python -c "import yolov5, torch; print('OK', torch.__version__)"
 
 O `pip` padrão costuma instalar **CPU**. Para **NVIDIA/CUDA**, siga a página oficial do PyTorch: [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/) e instale o par `torch` / `torchvision` compatível com a sua GPU/CUDA, com o venv ativado.
 
-## Desativar o venv
+## 7. Desativar o venv
 
 ```bash
 deactivate
