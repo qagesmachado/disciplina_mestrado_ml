@@ -1,8 +1,10 @@
-# Ambiente: venv_yolo_ultralytics — Ultralytics (E02 YOLOv8, E03/E04 futuros).
-# Sem yolov5 — não misturar com venv_yolo_5.
+# Ambiente: venv_yolo_ultralytics — pacote ultralytics (E02 YOLOv8 + E03/E04 YOLO11).
+# A versão do detector vem do arquivo de pesos (yolov8s.pt, yolo11s.pt), não de outro venv.
+# Não misturar com venv_yolo_5 (YOLOv5). Não criar venv separado para v8 vs v11.
 # Python recomendado: 3.10 ou 3.11
 #
-# Uso: pip install -r requirements-ultralytics.txt
+# Setup: .\experiments\YOLO_V8\setup_venv_ultralytics.ps1
+# GPU (Windows): .\experiments\YOLO_V8\setup_pytorch_gpu.ps1
 
 ultralytics>=8.3.0,<9.0.0
 

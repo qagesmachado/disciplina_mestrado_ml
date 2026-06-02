@@ -1,0 +1,7 @@
+outputs/**/*
+!outputs/.gitkeep
+**/*.pt
+**/*.cache
+**/weights/
+runs/
+wandb/

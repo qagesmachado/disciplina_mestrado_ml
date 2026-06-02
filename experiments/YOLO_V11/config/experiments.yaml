@@ -1,0 +1,24 @@
+# Ultralytics YOLO11 — E03 (pig fixo)
+
+defaults:
+  imgsz: 640
+  epochs: 100
+  batch: 16
+  patience: 50
+  seed: 42
+  conf_thres: 0.25
+  device: auto
+  batch_cpu: 8
+
+dataset:
+  name: pig_kaggle
+  description: "Particao fixa pig/train + pig/val (consolidada no repo)"
+
+experiments:
+  E03:
+    framework: ultralytics
+    model_label: YOLO11s_autoral
+    weights_init: yolo11s.pt
+    run_name: E03_yolo11s_pig
+    train: true
+    template_table: tabela_resultados_s1

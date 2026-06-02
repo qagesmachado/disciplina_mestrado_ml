@@ -1,4 +1,4 @@
-"""Carrega experiments/YOLO_V5|YOLO_V8/config/experiments.yaml."""
+"""Carrega config de experiments/YOLO_V5|YOLO_V8|YOLO_V11 (experiments_yolov5.yaml ou experiments.yaml)."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -6,11 +6,11 @@ from typing import Any
 
 import yaml
 
-from paths import DATA_YAML, REPO_ROOT, SHARED_OUTPUTS, version_root_for_exp
+from paths import DATA_YAML, REPO_ROOT, SHARED_OUTPUTS, config_path_for_exp, version_root_for_exp
 
 
 def load_config(exp_id: str) -> dict[str, Any]:
-    path = version_root_for_exp(exp_id) / "config" / "experiments.yaml"
+    path = config_path_for_exp(exp_id)
     with path.open(encoding="utf-8") as f:
         return yaml.safe_load(f)
 

@@ -1,0 +1,49 @@
+---
+description: DRY, KISS e escopo incremental — evitar over-engineering no TCD
+alwaysApply: true
+---
+
+# Simplicidade e escopo
+
+Projeto de TCD (mestrado). Prioridade: **funcionar com o mínimo de código e arquivos**.
+
+## Princípios
+
+- **KISS**: solução mais simples que resolve o problema atual. Sem camadas, abstrações ou configs “para o futuro”.
+- **DRY**: reutilize o que já existe (`experiments/shared/`, scripts de run, venvs). Não duplique lógica entre YOLO_V5/V8/V11.
+- **Incremental**: entregue **só a parte pedida agora**. Não antecipe E03, comparadores ou docs de etapas futuras.
+
+## Código
+
+- Prefira **editar** arquivos existentes a criar novos.
+- Um script só se **automatizar um fluxo repetido** ou **unificar passos que hoje são manuais e frágeis**.
+- Não criar: wrappers finos, factories, helpers de 3 linhas, módulos `utils/` genéricos, configs YAML/JSON extras sem necessidade real.
+- Python direto: funções curtas, imports mínimos, sem type hints/docstrings extensas em código experimental.
+
+```python
+# ❌ Evitar
+def create_training_pipeline_factory(config_path: str) -> TrainingPipelineFactory: ...
+
+# ✅ Preferir
+python experiments/YOLO_V8/scripts/treinar.py
+```
+
+## Scripts e estrutura
+
+- **Um** script de entrada por fluxo (ex.: `run_yolov8_pig.ps1`) basta; não proliferar `setup_*`, `verify_*`, `prepare_*` para a mesma tarefa.
+- Lógica compartilhada → `experiments/shared/scripts/`, não cópia em cada pasta YOLO.
+- Não adicionar pastas (`services/`, `core/`, `lib/`) sem conteúdo concreto e imediato.
+
+## Documentação
+
+- Doc **só quando ajuda a rodar ou entender uma decisão**. Curta, com comandos copy-paste.
+- Não criar README/planos/checklists novos sem pedido explícito.
+- Atualizar doc existente (ex.: `experiments/README.md`) em vez de criar paralelos.
+
+## Antes de criar algo novo, perguntar
+
+1. Já existe algo que faz isso?
+2. Dá para resolver com menos de ~30 linhas no arquivo atual?
+3. É necessário **agora** ou só “fica bonito depois”?
+
+Se a resposta for “não / sim / depois” → **não criar**.

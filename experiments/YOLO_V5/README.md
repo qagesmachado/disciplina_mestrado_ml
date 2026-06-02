@@ -1,15 +1,14 @@
-# YOLO_V5 — E01 + REF
+# YOLO_V5 — E01
 
-**Venv:** `venv_yolo_5` (raiz do repo)
-
-```powershell
-.\experiments\YOLO_V5\run_pig_baseline.ps1
-```
+Treino autoral YOLOv5s no dataset pig fixo. Venv: `venv_yolo_5`.
 
 | Script | Função |
 | --- | --- |
-| `scripts/treinar.py` | Treina E01 |
-| `scripts/validar.py` | Valida E01 ou REF |
-| `../shared/scripts/comparar.py` | Compara com E02 (se existir) |
+| `run_pig_baseline_yolov5.ps1` | Fluxo completo: dataset → treino → validar → comparar |
+| `scripts/treinar_yolov5.py` | Treina E01 |
+| `scripts/validar_yolov5.py` | Valida E01 |
+| `../shared/scripts/comparar.py` | Compara E01–E03 (se existirem) |
 
-**Saídas:** `experiments/YOLO_V5/outputs/E01_yolov5s_pig/`, `REF_best_pt_pig/`
+**Config:** `config/experiments_yolov5.yaml` — campo `weights_init` (`yolov5n.pt` ou `yolov5s.pt`).
+
+**Saída:** `experiments/YOLO_V5/outputs/E01_yolov5s_pig/`

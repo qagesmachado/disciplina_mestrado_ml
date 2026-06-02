@@ -4,7 +4,7 @@ Dois ambientes virtuais **isolados** (não misturar dependências):
 
 | Venv | Uso | Requirements |
 | --- | --- | --- |
-| `venv_yolo_5` | YOLOv5 — E01, REF | `requirements-yolov5.txt` ou `requirements.txt` |
+| `venv_yolo_5` | YOLOv5 — E01 | `requirements-yolov5.txt` ou `requirements.txt` |
 | `venv_yolo_ultralytics` | YOLOv8+ — E02 | `requirements-ultralytics.txt` |
 
 Crie cada venv separadamente. **Não** instale `ultralytics` no `venv_yolo_5`.
@@ -77,10 +77,10 @@ python -c "import yolov5, torch; print('OK', torch.__version__)"
 
 ## 6. Scripts (com o venv ativo)
 
-- **Experimentos TCD:** [experiments/README.md](experiments/README.md) — pig fixo, E01 + E02 + REF
-- `.\experiments\YOLO_V5\run_pig_baseline.ps1` — YOLOv5: E01 + REF
+- **Experimentos TCD:** [experiments/README.md](experiments/README.md) — pig fixo, E01 + E02 + E03
+- `.\experiments\YOLO_V5\run_pig_baseline_yolov5.ps1` — YOLOv5: E01
 - `.\experiments\YOLO_V8\run_yolov8_pig.ps1` — YOLOv8: E02
-- `python experiments/YOLO_V5/scripts/validar.py REF`
+- `python experiments/YOLO_V5/scripts/validar_yolov5.py E01`
 - `python analisar_leitoes_por_imagem.py` -- estatísticas e gráficos
 - `python draw_yolo_boxes_v3.py --help` -- desenhar caixas nas imagens
 

@@ -1,6 +1,0 @@
-experimento,modelo,split,precision,recall,map50,map50_95,f1,notas
-E01,YOLOv5s_autoral,pig_val,0.991756,0.977588,0.991366,0.83023,0.984621,treino pig/train (YOLO_V5)
-REF,best.pt_terceiros,pig_val,0.991241,0.985059,0.992428,0.830082,0.98814,dataset pig fixo (136 val)
-E02,YOLOv8s,pig_val,0.978468,0.968517,0.983973,0.794182,0.973467,treino pig/train (YOLO_V8)
-E03,YOLO11s,pig_val,,,,,,fase futura
-E04,YOLO11-R,pig_val,,,,,,fase futura
