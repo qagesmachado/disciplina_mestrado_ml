@@ -2,9 +2,9 @@
 
 defaults:
   imgsz: 640
-  epochs: 100
+  epochs: 20
   batch: 16
-  patience: 50
+  patience: 5
   seed: 42
   conf_thres: 0.25
   device: auto

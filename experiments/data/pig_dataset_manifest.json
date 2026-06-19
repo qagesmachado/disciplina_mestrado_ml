@@ -1,9 +1,9 @@
 {
   "dataset": "pig_kaggle",
-  "path": "C:\\repositories\\repositories-mestrado\\disciplina_ml\\disciplina_ml_privado\\pig",
+  "path": "C:\\repositories\\repositories-mestrado\\disciplina_ml\\disciplina_mestrado_ml\\pig",
   "train_images": 929,
   "val_images": 136,
   "total": 1065,
-  "data_yaml": "C:\\repositories\\repositories-mestrado\\disciplina_ml\\disciplina_ml_privado\\experiments\\data\\yaml\\pig_dataset.yaml",
+  "data_yaml": "C:\\repositories\\repositories-mestrado\\disciplina_ml\\disciplina_mestrado_ml\\experiments\\data\\yaml\\pig_dataset.yaml",
   "note": "Particao fixa original do repositorio"
 }

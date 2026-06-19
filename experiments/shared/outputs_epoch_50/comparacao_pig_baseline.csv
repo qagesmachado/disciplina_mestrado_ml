@@ -1,0 +1,4 @@
+experimento,modelo,split,precision,recall,map50,map50_95,f1,total_time_sec,ms_per_image,val_time_sec,detect_time_sec,match_time_sec,device
+E01,YOLOv5s_autoral,pig_val (136 imgs),0.988119,0.976323,0.991308,0.828926,0.982185,46.418,341.31,38.395,7.28,0.728,0
+E02,YOLOv8s_autoral,pig_val (136 imgs),0.986089,0.983437,0.984047,0.794907,0.984761,16.193,119.07,13.07,2.403,0.707,0
+E03,YOLO11s_autoral,pig_val (136 imgs),0.972359,0.976137,0.983196,0.787235,0.974244,16.396,120.56,13.111,2.498,0.773,0

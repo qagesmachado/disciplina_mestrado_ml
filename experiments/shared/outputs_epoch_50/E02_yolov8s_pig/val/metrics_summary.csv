@@ -1,0 +1,2 @@
+experimento,modelo,split,precision,recall,map50,map50_95,f1,n_val_images,val_time_sec,detect_time_sec,match_time_sec,total_time_sec,ms_per_image,device,weights,data_yaml,conf_thres,framework
+E02,YOLOv8s_autoral,pig_kaggle,0.986089,0.983437,0.984047,0.794907,0.984761,136,13.07,2.403,0.707,16.193,119.07,0,C:\repositories\repositories-mestrado\disciplina_ml\disciplina_mestrado_ml\experiments\YOLO_V8\outputs\E02_yolov8s_pig\weights\best.pt,C:\repositories\repositories-mestrado\disciplina_ml\disciplina_mestrado_ml\experiments\data\yaml\pig_dataset.yaml,0.25,ultralytics

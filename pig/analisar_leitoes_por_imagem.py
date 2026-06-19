@@ -188,8 +188,9 @@ def gerar_histogramas(contagens_train: list[int], contagens_val: list[int], outp
     plt.savefig(output_dir / "histograma_leitoes_val.png", dpi=170)
     plt.close()
 
-    # Figura comparativa em subplots.
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), sharey=True)
+    # Figura comparativa em subplots (eixos Y independentes para que train e val
+    # fiquem legíveis mesmo com volumes muito diferentes).
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.8))
     axes[0].hist(contagens_train, bins=bins, color="#1f77b4", edgecolor="black", alpha=0.85)
     axes[0].set_title("Train")
     axes[0].set_xlabel("Leitões por imagem")
@@ -200,6 +201,7 @@ def gerar_histogramas(contagens_train: list[int], contagens_val: list[int], outp
     axes[1].hist(contagens_val, bins=bins, color="#ff7f0e", edgecolor="black", alpha=0.85)
     axes[1].set_title("Val")
     axes[1].set_xlabel("Leitões por imagem")
+    axes[1].set_ylabel("Frequência")
     axes[1].set_xticks(range(minimo, maximo + 1))
     axes[1].grid(axis="y", alpha=0.25)
 
@@ -207,6 +209,30 @@ def gerar_histogramas(contagens_train: list[int], contagens_val: list[int], outp
     fig.tight_layout()
     fig.savefig(output_dir / "histograma_leitoes_train_val_comparativo.png", dpi=170)
     plt.close(fig)
+
+    # Barras agrupadas no mesmo eixo: duas colunas por quantidade (train x val),
+    # em % dentro de cada conjunto para a comparação ser justa (volumes diferentes).
+    ks = list(range(minimo, maximo + 1))
+    n_t, n_v = len(contagens_train), len(contagens_val)
+    freq_t = Counter(contagens_train)
+    freq_v = Counter(contagens_val)
+    perc_t = [100.0 * freq_t.get(k, 0) / n_t if n_t else 0.0 for k in ks]
+    perc_v = [100.0 * freq_v.get(k, 0) / n_v if n_v else 0.0 for k in ks]
+
+    x = range(len(ks))
+    largura = 0.4
+    plt.figure(figsize=(9, 5))
+    plt.bar([i - largura / 2 for i in x], perc_t, width=largura, color="#1f77b4", edgecolor="black", label="Train")
+    plt.bar([i + largura / 2 for i in x], perc_v, width=largura, color="#ff7f0e", edgecolor="black", label="Val")
+    plt.title("Distribuição de leitões por imagem (Train x Val)")
+    plt.xlabel("Quantidade de leitões por imagem")
+    plt.ylabel("% de imagens no conjunto")
+    plt.xticks(list(x), ks)
+    plt.grid(axis="y", alpha=0.25)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(output_dir / "histograma_leitoes_train_val_agrupado.png", dpi=170)
+    plt.close()
 
 
 def main() -> None:

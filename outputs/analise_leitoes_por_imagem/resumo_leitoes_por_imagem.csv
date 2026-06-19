@@ -1,0 +1,3 @@
+grupo,total_imagens,min_leitoes,max_leitoes,media_leitoes
+train,929,11,15,13.9117
+val,136,12,15,13.7794

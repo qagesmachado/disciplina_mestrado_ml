@@ -27,7 +27,6 @@ build/
 .ipynb_checkpoints/
 
 # Dados e artefatos gerados (ML) — ajuste se quiser versionar um peso específico
-outputs/
 runs/
 wandb/
 *.pth

@@ -1,0 +1,11 @@
+# 2026-06-09T01:40:11.162962+00:00
+exp_id=E03
+framework=ultralytics
+run_name=E03_yolo11s_pig
+data_yaml=C:\repositories\repositories-mestrado\disciplina_ml\disciplina_mestrado_ml\experiments\data\yaml\pig_dataset.yaml
+weights_init=yolo11s.pt
+epochs=50 batch=16 imgsz=640
+ultralytics=8.4.56
+torch=2.12.0+cu130
+device=0
+best.pt=C:\repositories\repositories-mestrado\disciplina_ml\disciplina_mestrado_ml\experiments\YOLO_V11\outputs\E03_yolo11s_pig\weights\best.pt

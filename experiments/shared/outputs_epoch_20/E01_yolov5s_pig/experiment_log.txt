@@ -1,0 +1,11 @@
+# 2026-06-15T13:57:52.562809+00:00
+exp_id=E01
+framework=yolov5
+run_name=E01_yolov5s_pig
+data_yaml=C:\repositories\repositories-mestrado\disciplina_ml\disciplina_mestrado_ml\experiments\data\yaml\pig_dataset.yaml
+weights_init=yolov5s.pt
+epochs=20 batch=16 imgsz=640 seed=42
+device=0
+yolov5=7.0.14
+torch=2.12.0+cu130
+best.pt=C:\repositories\repositories-mestrado\disciplina_ml\disciplina_mestrado_ml\experiments\YOLO_V5\outputs\E01_yolov5s_pig\weights\best.pt
